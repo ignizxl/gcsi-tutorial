@@ -128,3 +128,29 @@ ou, se o comando **restart** não funcionar, tente estes:
 Se todos os passos foram seguidos corretamente até aqui, ao abrir o **localhost** no seu browser deve aparecer a seguinte aplicação:
 
   ![localhost](assets/localhost.png)
+
+  ### Etapa 5 – Teste de carga com Apache Bench
+
+Instale o Apache Bench digitando: 
+
+>      $ sudo apt update
+>      $ sudo apt install apache2-utils -y
+
+Depois disso, verificamos a instalação por:
+>      $ ab -V
+
+O comando acima produziu uma saída como a mostrada abaixo:
+
+  ![ab_version](assets/ab_version.png)
+
+Realizando testes e salvando num arquivo **.txt**: 
+
+>     $  ab -n 100 -c 50 -k -g test.txt "https://localhost/"
+
+  ![tests](assets/tests.png)
+
+Abrindo o arquivo **test.txt** com o nano: 
+
+>     $  nano test.txt
+
+  ![nano_test](assets/nano_test.png)
