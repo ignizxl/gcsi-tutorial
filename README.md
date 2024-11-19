@@ -42,3 +42,26 @@ Você pode verificar a alteração digitando:
 >      $ sudo ufw status
 
   ![ufw_status](assets/ufw_status.png)
+
+  ### Etapa 3 – Configurando o seu projeto
+Crie um diretório chamado "gcsi2024" no **/home/<usuário>** e entre no diretório criado digitando:
+
+>      $ mkdir gcsi2024 && cd gsci2024
+
+Clone o projeto cafeteria-web dentro do diretório "gcsi2024":
+
+>      $ git clone https://github.com/rhavymaia/cafeteria-web.git
+
+   ou, clone via SSH
+
+>     $ git clone git@github.com:rhavymaia/cafeteria-web.git
+
+  ![mkdir_e_gitclone](assets/mkdir_e_gitclone.png)
+
+Instale as dependências do projeto digitando:
+
+>      $ npm i
+
+Compile o projeto digitando: 
+
+>      $ npm run build
