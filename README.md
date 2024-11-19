@@ -2,11 +2,23 @@
 
 > ⚠️ AVISO: Todos os comandos utilizados neste repositório foram realizados em uma distribuição Linux Ubuntu.
 
+<p>
+  <a href="#etapa1">Etapa 1 – Instalando o Nginx</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#etapa2">Etapa 2 – Ajustando o Firewall</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#etapa3">Etapa 3 – Configurando o seu projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#etapa4">Etapa 4 – Configuração de redirecionamento no Nginx</a>&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;
+  <a href="#etapa5">Etapa 5 – Teste de carga com Apache Bench</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+
+<div id='etapa1'></div>
 
 ### Etapa 1 – Instalando o Nginx
 
 >      $ sudo apt update
 >      $ sudo apt install nginx -y
+
+
+<div id='etapa2'></div>
 
 ### Etapa 2 – Ajustando o Firewall
 
@@ -43,7 +55,9 @@ Você pode verificar a alteração digitando:
 
   ![ufw_status](assets/ufw_status.png)
 
-  ### Etapa 3 – Configurando o seu projeto
+<div id='etapa3'></div>
+
+### Etapa 3 – Configurando o seu projeto
 Crie um diretório chamado "gcsi2024" no **/home/<usuário>** e entre no diretório criado digitando:
 
 >      $ mkdir gcsi2024 && cd gsci2024
@@ -65,6 +79,8 @@ Instale as dependências do projeto digitando:
 Compile o projeto digitando: 
 
 >      $ npm run build
+
+<div id='etapa4'></div>
 
 ### Etapa 4 – Configuração de redirecionamento no Nginx
 
@@ -129,7 +145,9 @@ Se todos os passos foram seguidos corretamente até aqui, ao abrir o **localhost
 
   ![localhost](assets/localhost.png)
 
-  ### Etapa 5 – Teste de carga com Apache Bench
+<div id='etapa5'></div>
+
+### Etapa 5 – Teste de carga com Apache Bench
 
 Instale o Apache Bench digitando: 
 
@@ -155,7 +173,7 @@ Abrindo o arquivo **test.txt** com o nano:
 
   ![nano_test](assets/nano_test.png)
 
-  ### Referências utilizadas:
+### Referências utilizadas:
 
 - NGINX Configuration Guide: https://www.plesk.com/blog/various/nginx-configuration-guide/?authuser=1
 
