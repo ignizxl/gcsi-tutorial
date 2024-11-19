@@ -154,3 +154,20 @@ Abrindo o arquivo **test.txt** com o nano:
 >     $  nano test.txt
 
   ![nano_test](assets/nano_test.png)
+
+  ### Referências utilizadas:
+
+- NGINX Configuration Guide: https://www.plesk.com/blog/various/nginx-configuration-guide/?authuser=1
+
+- How To Install Nginx on Ubuntu 22.04: https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04
+
+- Apache Benchmark Install Ubuntu: https://bobcares.com/blog/apache-benchmark-install-ubuntu/?authuser=1
+
+- How to Stress Test Your Website With ab (ApacheBench): https://www.inmotionhosting.com/support/edu/wordpress/performance/stress-test-with-apachebench/
+
+
+## Aproveite este projeto!
+
+Criado por **João Igor dos Santos Barbosa**.
+
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ignizxl)
