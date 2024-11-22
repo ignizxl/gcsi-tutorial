@@ -101,6 +101,8 @@ Crie um arquivo **.conf** dentro do diretório **/etc/nginx/sites-available/** d
 
 Adicione as seguintes configurações no arquivo **cafeteria.conf**:
 
+>  ⚠️ AVISO: Para copiar as configurações abaixo, [clique aqui!](https://github.com/ignizxl/gcsi-tutorial/blob/main/src/cafeteria.conf)
+
   ![nano_cafeteria](assets/nano_cafeteria_conf_up.png)
 
 > ⚠️ AVISO: Antes de sair do nano certifique-se de salvar as alterações feitas! Utilize **Ctrol + o** para salvar as alterações e **Ctrol + x** para sair.
