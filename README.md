@@ -58,11 +58,11 @@ Você pode verificar a alteração digitando:
 <div id='etapa3'></div>
 
 ### Etapa 3 – Configurando o seu projeto
-Crie um diretório chamado "gcsi2024" no **/home/<usuário>** e entre no diretório criado digitando:
+Crie um diretório chamado **gcsi2024** no **/home/<usuário>** e entre no diretório criado digitando:
 
 >      $ mkdir gcsi2024 && cd gsci2024
 
-Clone o projeto cafeteria-web dentro do diretório "gcsi2024":
+Clone o projeto **[cafeteria-web](https://github.com/rhavymaia/cafeteria-web)** dentro do diretório **gcsi2024**:
 
 >      $ git clone https://github.com/rhavymaia/cafeteria-web.git
 
@@ -84,7 +84,7 @@ Compile o projeto digitando:
 
 ### Etapa 4 – Configuração de redirecionamento no Nginx
 
-Dentro do projeto, navegue até o diretório **dist/** e utilize o comando pwd para retornar o path completo, para isso, utilize os comandos:
+Dentro do projeto, navegue até o diretório **dist/** e utilize o comando **pwd** para retornar o path completo, para isso, utilize os comandos:
 
 >     $ ls
 >     $ cd dist/
@@ -92,16 +92,16 @@ Dentro do projeto, navegue até o diretório **dist/** e utilize o comando pwd p
 
   ![pwd](assets/pwd.png)
 
-Crie um arquivo .conf dentro do diretório **/etc/nginx/sites-available/** digitando:
+Crie um arquivo **.conf** dentro do diretório **/etc/nginx/sites-available/** digitando:
 
 >     $ cd /etc/nginx/sites-available/
 >     $ sudo nano cafeteria.conf
 
   ![sudo_nano_cafeteria](assets/sudo_nano_cafeteria_conf.png)
 
-Adicione as seguintes configurações no arquivo cafeteria.conf:
+Adicione as seguintes configurações no arquivo **cafeteria.conf**:
 
-  ![nano_cafeteria](assets/nano_cafeteria_conf.png)
+  ![nano_cafeteria](assets/nano_cafeteria_conf_up.png)
 
 > ⚠️ AVISO: Antes de sair do nano certifique-se de salvar as alterações feitas! Utilize **Ctrol + o** para salvar as alterações e **Ctrol + x** para sair.
 
@@ -161,9 +161,37 @@ O comando acima produziu uma saída como a mostrada abaixo:
 
   ![ab_version](assets/ab_version.png)
 
-Realizando testes e salvando num arquivo **.txt**: 
+Teste básico com o **Apache Bench**
+
+> Primeiramente, faremos um teste básico utilizando a opção **-n**, que permite definir o número de requisições que você deseja enviar. Sem essa opção, o comando enviará apenas uma única requisição. Execute o comando abaixo para enviar **10 requisições individuais**, o que não deve ser difícil para o seu servidor processar. Este é um bom ponto de partida para comparar resultados futuros.
+
+>     $ ab -n 10 "https://example.com/"
+
+Aumentar o Número de Requisições Enviadas:
+
+> Agora que você já sabe como realizar um teste básico, pode aumentar o número de requisições. No exemplo a seguir, serão enviadas **500 requisições**, mas você pode ajustar esse número conforme necessário para comparar os resultados.
+
+>     $ ab -n 500 "https://exampletestsite.com/site"
+
+Aumentar o Número de Requisições Concorrentes:
+
+> Em seguida, usaremos a opção **-c** para tornar as requisições **concorrentes**, ou seja, elas serão enviadas ao mesmo tempo. No exemplo, serão enviadas **500 requisições**, com **50 sendo processadas simultaneamente.**
+
+>     $ ab -n 500 -c 50 "https://example.com/"
+
+Realizar um Teste Persistente com o ab (KeepAlive): 
+
+> A opção **-k** adiciona um cabeçalho KeepAlive, permitindo que o servidor mantenha a conexão aberta para ser reutilizada.
+
+>     $ ab -n 10000 -c 1000 -k "https://example.com/"
+
+Salvar a Saída do Teste em um Arquivo: 
+
+> Use a opção **-g** para salvar os resultados do teste em um arquivo, permitindo análise posterior ou leitura em formato de texto. No exemplo abaixo, os resultados serão salvos em um arquivo chamado **test.txt**.
 
 >     $  ab -n 100 -c 50 -k -g test.txt "https://localhost/"
+
+Veja o exemplo abaixo:
 
   ![tests](assets/tests.png)
 
