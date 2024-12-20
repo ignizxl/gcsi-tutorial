@@ -101,7 +101,27 @@ Crie um arquivo **.conf** dentro do diretório **/etc/nginx/sites-available/** d
 
 Adicione as seguintes configurações no arquivo **cafeteria.conf**:
 
->  ⚠️ AVISO: Para copiar as configurações abaixo, [clique aqui!](https://github.com/ignizxl/gcsi-tutorial/blob/main/src/cafeteria.conf)
+>  ⚠️ AVISO: Para confeir as configurações abaixo, [clique aqui!](https://github.com/ignizxl/gcsi-tutorial/blob/main/src/cafeteria.conf)
+
+```bash
+
+  server {
+        listen 80;
+        listen [::]:80;
+
+        ### Abaixo adicione o path retornado pelo comando pwd
+        root /home/igor/gsci2024/cafeteria-web/dist;
+        index index.html;
+
+        server_name _;
+
+        ### O bloco de localização na sua configuração deve ser:
+        location / {
+                try_files $uri /index.html;
+        }
+}
+
+```
 
   ![nano_cafeteria](assets/nano_cafeteria_conf_up.png)
 
